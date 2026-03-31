@@ -90,6 +90,9 @@
       enable = true;
       userName = "Matt Edwards";
       userEmail = "edwardsjm01@gmail.com";
+      extraConfig = {
+        push.default = "current";
+      };
     };
     zsh = let
       nodeVersion = 24;
