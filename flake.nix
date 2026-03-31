@@ -9,9 +9,10 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    claude-code-nix.url = "github:sadjow/claude-code-nix";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, claude-code-nix, ... }:
   let
     username = "mattedwards";
   in
@@ -24,7 +25,7 @@
         ./darwin.nix
 
         ({config, pkgs, ...}@args: {
-          home-manager.users.${username} = import ./home/home.nix (args // {inherit username;});
+          home-manager.users.${username} = import ./home/home.nix (args // { inherit username inputs; });
         } )
       ];
       specialArgs = { inherit self username ; };

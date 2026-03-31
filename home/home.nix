@@ -1,4 +1,4 @@
-{ config, pkgs, username, ... }:
+{ config, pkgs, username, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -24,6 +24,7 @@
     # pkgs.hello
     fnm
     utm
+    inputs.claude-code-nix.packages.${pkgs.system}.default
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
