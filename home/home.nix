@@ -25,6 +25,7 @@
     fnm
     utm
     inputs.claude-code-nix.packages.${pkgs.system}.default
+    tlrc
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -92,6 +93,7 @@
       userEmail = "edwardsjm01@gmail.com";
       extraConfig = {
         push.default = "current";
+        fetch.prune = true;
       };
     };
     zsh = let

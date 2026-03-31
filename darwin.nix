@@ -93,6 +93,7 @@
 					];
 					vimConfig = ''
             syntax enable
+            let mapleader = " "
 						set tabstop=2
 						set shiftwidth=2
 						set expandtab
