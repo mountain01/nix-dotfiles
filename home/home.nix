@@ -90,17 +90,22 @@
       userName = "Matt Edwards";
       userEmail = "edwardsjm01@gmail.com";
     };
-    zsh = {
+    zsh = let
+      nodeVersion = 24;
+    in {
       enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       profileExtra = ''
         eval "$(/opt/homebrew/bin/brew shellenv)"
         '';
-      initContent =''
+      initContent = ''
         eval "$(fnm env --use-on-cd --shell zsh --version-file-strategy recursive)"
-        fnm install 20
-        fnm default 20
+        if ! fnm list | grep -q "v${toString nodeVersion}"; then
+          fnm install ${toString nodeVersion}
+          fnm default ${toString nodeVersion}
+        fi
+        fnm use ${toString nodeVersion}
         '';
     };
 
