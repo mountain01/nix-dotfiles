@@ -118,6 +118,8 @@
           "cursor"
           "visual-studio-code"
           "vlc"
+          "ghostty"
+          "epic-games"
         ];
         brews = [
           #"speedtest"
