@@ -141,6 +141,12 @@
           hostname = "192.168.86.36";
           identityFile = "~/.ssh/arm";
         };
+
+        "factorio" = {
+          user = "root";
+          hostname= "factorio.do.jmattedwards.com";
+          identityFile = "~/.ssh/id_ed25519";
+        };
       };
 
     };
